@@ -1,0 +1,67 @@
+{% extends 'BlockAccueil/base.html.twig' %}
+
+{% block content %}
+    <div style="margin-top: 2%;margin-bottom:2% " class="inner container">
+        <div class="row">
+            {#<div style="background-color: red;height: 10%" class="col-md-6">#}
+
+            {#</div>#}
+
+            <div class="col-md-1"></div>
+            <div class="col-md-10 container-fluid"{# style="background-color: red;height: 10%"#}>
+                <div class="row">
+
+                    {% for offre in offres %}
+                        <div class="col-md-4">
+                            <div class="card" style="background-color: #f2f3f4">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color: green;">Offre</h4>
+
+                                    <div style="background-color: red ;">
+                                        <img src="{{  asset('uploads/offreImages/' ~ offre.image) }}" class="img-fluid" alt="image"/>
+
+                                    </div>
+
+                                    <div id="traffic-chart-legend"
+                                         class="rounded-legend legend-vertical legend-bottom-left pt-4">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <th>Quantite</th>
+                                                <td>{{ offre.qteDisponible }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Prix</th>
+                                                <td>{{ offre.prix|number_format('0',' ',' ') }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Datedebut</th>
+                                                <td>
+                                                    {% if offre.dateDebut %}{{ offre.dateDebut|date('d-m-Y') }}{% endif %}
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Datefin</th>
+                                                <td>{% if offre.dateFin %}{{ offre.dateFin|date('d-m-Y') }}{% endif %}</td>
+                                            </tr>
+                                            </tbody>
+
+                                        </table>
+                                        <a class="btn btn-success" href="{{ path('fos_user_security_login') }}">Accceder a l'offre</a>
+                                        {#<h5>Quantite :{{ offre.qteDisponible }}</h5><br>#}
+                                        {#<h5>Prix : {{ offre.prix|number_format('0',' ',' ') }}</h5><br>#}
+                                        {#<h5>Date Debut :{{ offre.dateDebut |date('d-m-Y') }}</h5><br>#}
+                                        {#<h5>Date FIn :{{ offre.dateFin |date('d-m-Y') }}</h5><br>#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+            <div class="col-md-1"></div>
+        </div>
+
+    </div>
+{% endblock %}

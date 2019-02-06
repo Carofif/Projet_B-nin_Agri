@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block titlePage %}
+    <h1><i class="fa fa-dashboard"></i>Champ</h1>
+    <p>Création d'une nouveau Champ</p>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item">Champ</li>
+        <li class="breadcrumb-item"><a href="{{path('champ_new')}}">Creer une nouvelle cham</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-light" href="{{ path('champ_index') }}"><span
+                        class=" mdi mdi-arrow-left">Retour a la liste</span></a>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body container" align="center">
+
+                    <br><br>
+                    {{ form_start(form) }}
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <label for=""><b>Departement</b></label>
+                            {{ form_widget(form.departement , {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="text-danger">{{ form_errors(form.departement) }}</span>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <br>
+                    </div>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <label for=""><b>Superficie</b></label>
+                            {{ form_widget(form.superficie , {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="text-danger">{{ form_widget(form.superficie) }}</span>
+                        </div>
+
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <label for=""><b>Addresse</b></label>
+                            {{ form_widget(form.addresse , {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="text-danger">{{ form_errors(form.addresse) }}</span>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <label for=""><b>Ville</b></label>
+                            {{ form_widget(form.ville , {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="text-danger">{{ form_errors(form.ville) }}</span>
+
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+<BR>
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8" align="right">
+                            <input style="padding: 15px 40px 15px 40px;" class="btn btn-success" type="submit" value="Ajouter"/>
+                        </div>
+
+                        <div class="col-md-2"></div>
+
+
+                        {#<div class="col-lg-9"></div>#}
+                        {#<div class="col-lg-1">#}
+                            {#<div>#}
+                                {#<input style="padding: 15% 40% 15% 40%;" class="btn btn-success" type="submit" value="Create"/>#}
+                            {#</div>#}
+                        {#</div>#}
+                        {#<div class="col-lg-3">#}
+                        {#</div>#}
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

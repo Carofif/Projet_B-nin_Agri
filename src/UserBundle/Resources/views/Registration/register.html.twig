@@ -1,0 +1,163 @@
+{#{% extends "loginBase.html.twig" %}
+
+{% block content %}
+        <section class="login-content">
+      <div class="logo">
+         <h1>Benin agriculture</h1>
+     </div>
+     <div class="login-box">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    <div class="login-form">
+        <h1 class="form-heading">Formulaire de connexion</h1>
+        <div class="main-div">
+            <div class="panel">
+                <h2>Admin Login</h2>
+                <p>Entrez svp votre mot de passe et votre email</p>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.nom, {'attr' : {'class' : 'form-control','placeholder':'nom'}}) }}
+                <span class="text-danger">{{ form_errors(form.nom) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.prenom, {'attr' : {'class' : 'form-control','placeholder':'prenom'}}) }}
+                <span class="text-danger">{{ form_errors(form.prenom) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.dateNaissance, {'attr' : {'class' : 'form-control','placeholder':'dateNaissance'}}) }}
+                <span class="text-danger">{{ form_errors(form.dateNaissance) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.telephone, {'attr' : {'class' : 'form-control','placeholder':'telephone'}}) }}
+                <span class="text-danger">{{ form_errors(form.telephone) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.email, {'attr' : {'class' : 'form-control','placeholder':'email'}}) }}
+                <span class="text-danger">{{ form_errors(form.email) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.username, {'attr' : {'class' : 'form-control','placeholder':'username'}}) }}
+                <span class="text-danger">{{ form_errors(form.username) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.plainPassword.first, {'attr' : {'class' : 'form-control','placeholder':'password'}}) }}
+
+                <span class="text-danger">{{ form_errors(form.plainPassword.first) }}</span>
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.plainPassword.second, {'attr' : {'class' : 'form-control','placeholder':'repaeat second'}}) }}
+
+                <span class="text-danger">{{ form_errors(form.plainPassword.second) }}</span>
+            </div>
+
+            <div>
+                <input type="submit" value="Valider"/>
+            </div>
+
+        </div>
+    </div>
+    {{ form_rest(form) }}
+
+    {{ form_end(form) }}
+</div>
+
+</section>
+
+
+
+
+{#{% endblock %}#}
+
+
+
+
+{% extends 'loginBase.html.twig' %}
+
+
+
+    {% block stylesheet %}
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('front/css/mainLogin.css') }}">
+        <!-- Font-icon css-->
+        <link rel="stylesheet" type="text/css"
+              href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock %}
+{% block content %}
+    <section class="login-content">
+        <div class="logo">
+            <h1>Benin agriculture</h1>
+        </div>
+        <div class="login-box">
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            {#<input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>#}
+            <div class="login-form">
+
+                <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INSCRIPTION</h3>
+
+                <div class="form-group">
+                    {{ form_widget(form.nom, {'attr' : {'class' : 'form-control','placeholder':'nom'}}) }}
+                    <span class="text-danger">{{ form_errors(form.nom) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.type, {'attr' : {'class' : 'form-control','placeholder':'type'}}) }}
+                    <span class="text-danger">{{ form_errors(form.type) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.prenom, {'attr' : {'class' : 'form-control','placeholder':'prenom'}}) }}
+                    <span class="text-danger">{{ form_errors(form.prenom) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.dateNaissance, {'attr' : {'class' : 'form-control','placeholder':'date de Naissance'}}) }}
+                    <span class="text-danger">{{ form_errors(form.dateNaissance) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.telephone, {'attr' : {'class' : 'form-control','placeholder':'telephone'}}) }}
+                    <span class="text-danger">{{ form_errors(form.telephone) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.email, {'attr' : {'class' : 'form-control','placeholder':'email'}}) }}
+                    <span class="text-danger">{{ form_errors(form.email) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.username, {'attr' : {'class' : 'form-control','placeholder':'username'}}) }}
+                    <span class="text-danger">{{ form_errors(form.username) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.plainPassword.first, {'attr' : {'class' : 'form-control','placeholder':'password'}}) }}
+
+                    <span class="text-danger">{{ form_errors(form.plainPassword.first) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.plainPassword.second, {'attr' : {'class' : 'form-control','placeholder':'repaeat second'}}) }}
+
+                    <span class="text-danger">{{ form_errors(form.plainPassword.second) }}</span>
+                </div>
+                {#{{ form_widget(form) }}#}
+                <div style="padding-top: 5%;" class="form-group btn-container">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>Inscription</button>
+
+                    {#<input type="submit" value="Valider"/>#}
+                </div>
+            </div>
+            {{ form_rest(form) }}
+
+            {{ form_end(form) }}
+            </form>
+            <form class="forget-form" action="http://pratikborsadiya.in/vali-admin/index.html">
+                <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>
+
+                <div class="form-group">
+                    <label class="control-label">EMAIL</label>
+                    <input class="form-control" type="text" placeholder="Email">
+                </div>
+                <div class="form-group btn-container">
+                    <button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>RESET</button>
+                </div>
+                <div class="form-group mt-3">
+                    <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i>
+                            Back to Login</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

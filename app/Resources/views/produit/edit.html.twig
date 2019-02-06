@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+   
+   <div class="row">
+		<div class="col-md-12">
+			 <a class="btn btn-light" href="{{ path('produit_index') }}"><span class=" mdi mdi-arrow-left">Retour a la liste<span/></a>
+		</div>
+   </div><br>
+   <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Création d'un nouveau produit</h4>
+
+    {{ form_start(edit_form) }}
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">Référence</label>
+			 {{ form_widget(edit_form.reference , {'attr' : {'class' : 'form-control'}}) }}
+                <span class="text-danger">{{ form_errors(edit_form.reference) }}</span>
+        </div>
+        <div class="col-md-6">
+            <label for="">Libellé Produit</label>
+			 {{ form_widget(edit_form.libelle , {'attr' : {'class' : 'form-control'}}) }}
+                <span class="text-danger">{{ form_errors(edit_form.libelle) }}</span>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">Description</label>
+			 {{ form_widget(edit_form.description , {'attr' : {'class' : 'form-control'}}) }}
+                <span class="text-danger">{{ form_errors(edit_form.description) }}</span>
+        </div>
+        <div class="col-md-6">
+            <label for="">Photo</label>
+			 {{ form_widget(edit_form.photo , {'attr' : {'class' : 'form-control'}}) }}
+                <span class="text-danger">{{ form_errors(edit_form.photo) }}</span>
+        </div>
+    </div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div align="right">
+			 <input class="btn btn-success" type="submit" value="Create" />
+			</div>
+		</div>
+	</div>
+       
+    {{ form_end(edit_form) }}
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <ul>
+        <li>
+           
+        </li>
+    </ul>
+{% endblock %}

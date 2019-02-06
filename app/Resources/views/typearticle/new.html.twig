@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-light" href="{{ path('champ_index') }}"><span class=" mdi mdi-arrow-left">Retour a la liste</span></a>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Création Type Article</h4>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Create"/>
+                    {{ form_end(form) }}
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('typearticle_index') }}">Back to the list</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{#, {'attr' : {'class' : 'form-control'}}#}

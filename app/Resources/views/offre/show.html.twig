@@ -1,0 +1,120 @@
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title"></h4>
+            <h1>Offre</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <img src="{{  asset('uploads/offreImages/' ~ offre.image) }}" class="img-fluid" alt="image"/>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ offre.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ offre.produitId.libelle }}</td>
+                        </tr>
+                        <tr>
+                            <th>Datedebut</th>
+                            <td>{% if offre.dateDebut %}{{ offre.dateDebut|date('d-m-Y') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Datefin</th>
+                            <td>{% if offre.dateFin %}{{ offre.dateFin|date('d-m-Y') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Qtedisponible</th>
+                            <td>{{ offre.qteDisponible }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ offre.prix|number_format(0,',',' ') }}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        {<ul>
+            <li>
+                <a href="{{ path('demande_new') }}" class="btn btn-success">Acceder à l'offre </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{#<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <h1>Offre</h1>
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ offre.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ offre.produitId.libelle }}</td>
+                        </tr>
+                        <tr>
+                            <th>Datedebut</th>
+                            <td>{% if offre.dateDebut %}{{ offre.dateDebut|date('d-m-Y') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Datefin</th>
+                            <td>{% if offre.dateFin %}{{ offre.dateFin|date('d-m-Y') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Qtedisponible</th>
+                            <td>{{ offre.qteDisponible }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ offre.prix|number_format(0,',',' ') }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <th>Prix</th>
+                            <td>{{ offre.prix|number_format(0,',',' ') }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <ul>
+                    <li>
+                        <a href="{{ path('offre_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('offre_edit', { 'id': offre.id }) }}">Edit</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Delete">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>#}
+{% endblock %}
+
+
+

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{{ path('typearticle_new') }}" class="btn btn-success">Nouveau </a>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Typearticles list</h1>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Code</th>
+                            <th>Libelle</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for typeArticle in typeArticles %}
+                            <tr>
+                                <td>
+                                    <a href="{{ path('typearticle_show', { 'id': typeArticle.id }) }}">{{ typeArticle.id }}</a>
+                                </td>
+                                <td>{{ typeArticle.code }}</td>
+                                <td>{{ typeArticle.libelle }}</td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('typearticle_show', { 'id': typeArticle.id }) }}">show</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('typearticle_edit', { 'id': typeArticle.id }) }}">edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('typearticle_new') }}">Create a new typeArticle</a>#}
+        {#</li>#}
+    {#</ul>#}
+{% endblock %}

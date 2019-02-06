@@ -1,0 +1,92 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{{ path('abonnement_new') }}" class="btn btn-success">Nouveau </a>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h1>Liste des Abonnements</h1>
+
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Date de debut</th>
+                            <th>Date de fin</th>
+                            <th>Montant de l'abonnement</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for abonnement in abonnements %}
+                            <tr>
+                                <td><a href="{{ path('abonnement_show', { 'id': abonnement.id }) }}">{{ abonnement.id }}</a></td>
+                                <td>{% if abonnement.datedebut %}{{ abonnement.datedebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                <td>{% if abonnement.dateFin %}{{ abonnement.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                <td>{{ abonnement.montantAbonnement }}</td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('abonnement_show', { 'id': abonnement.id }) }}">Montrer</a>
+                                        </li>
+                                        <li>
+                                            {% if is_granted('ROLE_SUPER_ADMIN') %} <a href="{{ path('abonnement_edit', { 'id': abonnement.id }) }}">edit</a>  {% endif %}
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    {# <ul>
+                         <li>
+                             <a href="{{ path('demande_new') }}">Create a new demande</a>
+                         </li>
+                     </ul>#}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

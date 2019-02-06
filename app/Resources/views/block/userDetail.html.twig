@@ -1,0 +1,8 @@
+
+    <div class="app-sidebar__user">
+        <img style="width: 40%" class="app-sidebar__user-avatar" src="{#{ asset('front/img/user_carolle.jpg') }#}" alt="User Image">
+        <div>
+            <p class="app-sidebar__user-name"><a href="{{ path('fos_user_profile_show') }}">{{ app.user.nom ~' '~ app.user.prenom  }}</a></p>
+            <p class="app-sidebar__user-designation">Frontend Developper</p>
+        </div>
+    </div>

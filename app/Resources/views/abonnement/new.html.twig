@@ -1,0 +1,65 @@
+
+{% extends 'base.html.twig' %}
+
+{% block titlePage %}
+    <h1><i class="fa fa-dashboard"></i>Abonnement</h1>
+    <p>Création d'un nouveau Abonnement</p>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item">Abonnement</li>
+        <li class="breadcrumb-item"><a href="{{path('abonnement_new')}}">Creer un nouveau abonnement</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-light" href="{{ path('abonnement_index') }}"><span class=" mdi mdi-arrow-left">Retour a la liste</span>
+            </a>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Création d'un nouveau abonnement</h4>
+
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="">Date de Debut</label>
+                            {{ form_widget(form.datedebut , {'attr' : {'class' : 'form-control demoDate'}}) }}
+                            <span class="text-danger">{{ form_widget(form.datedebut) }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Date de Fin</label>
+                            {{ form_widget(form.dateFin , {'attr' : {'class' : 'form-control demoDate'}}) }}
+                            <span class="text-danger">{{ form_errors(form.dateFin) }}</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div align="right">
+                                <input class="btn btn-success" type="submit" value="Create"/>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {#<ul>#}
+    {#<li>#}
+    {#<a href="{{ path('offre_index') }}">Back to the list</a>#}
+    {#</li>#}
+    {#</ul>#}
+{% endblock %}

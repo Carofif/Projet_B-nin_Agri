@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{{ path('demande_new') }}" class="btn btn-success">Nouveau </a>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+    <h1>Liste des demandes</h1>
+
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Quantitecmd</th>
+                <th>Prixutvoulue</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+            <tr>
+                <td><a href="{{ path('demande_show', { 'id': demande.id }) }}">{{ demande.id }}</a></td>
+                <td>{% if demande.dateDebut %}{{ demande.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if demande.dateFin %}{{ demande.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ demande.quantiteCmd }}</td>
+                <td>{{ demande.prixUTvoulue }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demande_show', { 'id': demande.id }) }}">Montrer</a>
+                        </li>
+                        <li>
+                            {% if is_granted('ROLE_SUPER_ADMIN') %}<a href="{{ path('demande_edit', { 'id': demande.id }) }}">edit</a> {% endif %}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+	
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

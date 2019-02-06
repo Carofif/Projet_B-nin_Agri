@@ -1,0 +1,39 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title"></h4>
+        <h1>Abonnement</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ abonnement.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date de debut</th>
+                        <td>{% if abonnement.datedebut %}{{ abonnement.datedebut|string('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Date de fin</th>
+                        <td>{% if abonnement.dateFin %}{{ abonnement.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Montant de l'abonnement</th>
+                        <td>{{ abonnement.montantAbonnement }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+  <div class="row">
+  
+		<div class="col-md-12">
+			 <a class="btn btn-light" href="{{ path('demande_index') }}"><span class=" mdi mdi-arrow-left">Retour a la liste<span/></a>
+		</div>
+	</div><br>
+  <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Demande N°{{ demande.id }}</h4>
+    <table class='table'>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande.id }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{% if demande.dateDebut %}{{ demande.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{% if demande.dateFin %}{{ demande.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Quantitecmd</th>
+                <td>{{ demande.quantiteCmd }}</td>
+            </tr>
+            <tr>
+                <th>Prixutvoulue</th>
+                <td>{{ demande.prixUTvoulue }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+	
+<br>
+   <div class="row">
+		<div class="col-md-2" style="margin-right = 10"> 
+		
+		<a  class="btn btn-info" href="{{ path('demande_edit', { 'id': demande.id }) }}"><span class="mdi mdi-stackexchange">Modifier<span/></a>
+		</div>
+		
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-2">
+		 {{ form_start(delete_form) }}
+				<button type="submit" class="btn btn-danger"><span class=" mdi mdi-delete "></span>Supprimer</button>
+		 
+            {{ form_end(delete_form) }}
+			</div>
+   </div><br>
+    {#<ul>
+        <li>
+            <a href="{{ path('demande_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('demande_edit', { 'id': demande.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+	 #}
+	</div>
+					</div>
+					</div>
+					</div>
+{% endblock %}

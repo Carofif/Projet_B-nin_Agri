@@ -1,0 +1,81 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Offre
+ *
+ * @ORM\Table(name="offre")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\OffreRepository")
+ */
+class Offre
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateDebut", type="datetime")
+     */
+    private $dateDebut;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateFin", type="datetime")
+     */
+    private $dateFin;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qteDisponible", type="integer")
+     */
+    private $qteDisponible ;
+
+    /**
+     * @var \datetime
+     *
+     * @ORM\Column(name="prix", type="decimal", precision=10, scale=2)
+     */
+    private $prix;
+
+    /**
+     * @var int
+     * @ORM\ManyToOne (targetEntity="Produit")
+     * @ORM\JoinColumn(nullable = false)
+     */
+    private $produitId;
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     
+     */
+    private $image;
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="valide", type="boolean")
+     */
+    private $valide ;
+    /**
+     * @var int
+     * @ORM\Column(name="userId", type="integer")
+     */
+    private $UserId;
+
+
+}

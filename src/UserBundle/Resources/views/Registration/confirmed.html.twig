@@ -1,0 +1,36 @@
+{#{% extends "@FOSUser/layout.html.twig" %}#}
+
+{#{% trans_default_domain 'FOSUserBundle' %}#}
+
+{#{% block fos_user_content %}#}
+    {#<p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>#}
+    {#{% if targetUrl %}#}
+    {#<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>#}
+    {#{% endif %}#}
+{#{% endblock fos_user_content %}#}
+
+
+
+{% extends 'loginBase.html.twig' %}
+
+
+
+    {% block stylesheet %}
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('front/css/main.css') }}">
+        <!-- Font-icon css-->
+        <link rel="stylesheet" type="text/css"
+              href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock %}
+{% block content %}
+
+    <section class="login-content">
+        <div class="logo">
+            <h1>Benin agriculture</h1>
+        </div>
+        <div align="center  " class="login-box">
+            <p>Inscription réussi</p><br>
+        </div>
+    </section>
+
+{% endblock %}

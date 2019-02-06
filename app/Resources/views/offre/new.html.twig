@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block titlePage %}
+    <h1><i class="fa fa-dashboard"></i>Offre</h1>
+    <p>Création d'une nouvelle offre</p>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item">Offre</li>
+        <li class="breadcrumb-item"><a href="{{path('offre_new')}}">Creer une nouvelle offre</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-light" href="{{ path('offre_index') }}"><span class=" mdi mdi-arrow-left">Retour a la liste</span>
+        </a>
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Création d'une nouvelle offre</h4>
+
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Date Debut</label>
+                        {{ form_widget(form.dateDebut , {'attr' : {'class' : 'form-control demoDate'}}) }}
+                        <span class="text-danger">{{ form_widget(form.dateDebut) }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Date Fin</label>
+                        {{ form_widget(form.dateFin , {'attr' : {'class' : 'form-control demoDate'}}) }}
+                        <span class="text-danger">{{ form_errors(form.dateFin) }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Nom du produit</label>
+                        {{ form_widget(form.produitId , {'attr' : {'class' : 'form-control'}}) }}
+                        <span class="text-danger">{{ form_errors(form.produitId) }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="">Quantité disponible</label>
+                        {{ form_widget(form.qteDisponible , {'attr' : {'class' : 'form-control'}}) }}
+                        <span class="text-danger">{{ form_widget(form.qteDisponible) }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Prix par Kg</label>
+                        {{ form_widget(form.prix , {'attr' : {'class' : 'form-control'}}) }}
+                        <span class="text-danger">{{ form_errors(form.prix) }}</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="">Image</label>
+                        {{ form_widget(form.image , {'attr' : {'class' : 'form-control'}}) }}
+                        <span class="text-danger">{{ form_errors(form.image) }}</span>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div align="right">
+                            <input class="btn btn-success" type="submit" value="Create"/>
+                        </div>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+</div>
+{#<ul>#}
+    {#<li>#}
+        {#<a href="{{ path('offre_index') }}">Back to the list</a>#}
+    {#</li>#}
+{#</ul>#}
+{% endblock %}

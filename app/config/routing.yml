@@ -1,0 +1,22 @@
+app_liste_user:
+    resource: "@AppBundle/Controller/ListeUserController.php"
+    type:     annotation
+
+app_abonnement:
+    resource: "@AppBundle/Controller/AbonnementController.php"
+    type:     annotation
+
+app_abonnement:
+    resource: "@AppBundle/Controller/AbonnementController.php"
+    type:     annotation
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
