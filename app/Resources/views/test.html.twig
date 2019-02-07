@@ -1,0 +1,47 @@
+{% extends 'BlockAccueil/base.html.twig' %}
+{% block footer %}
+    <div class="has-background-black">
+        <footer id="footer" class="hoc clear columns is-centered">
+            <div class="column is-one-quarter">
+                <h6 class="title has-text-centered">Nous retrouver</h6>
+                <ul class="nospace linklist contact">
+                    <li><i class="fa fa-map-marker"></i> Cotonou, Rep. du Benin</li>
+                    <li><i class="fa fa-phone"></i> +22966852813<br></li>
+                    <li><i class="fa fa-phone"></i> +22997246746</li>
+                    <li><i class="fa fa-at"></i> beninagriculture@gmail.com</li>
+                </ul>
+            </div>
+            <div class="column is-one-quarter">
+                <h6 class="title has-text-centered">Explorez</h6>
+                <ul class="nospace linklist">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">S'abonner</a></li>
+                    <li><a href="#">A propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="column is-one-quarter">
+                <h6 class="title has-text-centered">Souscrivez vous</h6>
+                <form method="post" action="#">
+                    <div class="field">
+                        <label class="label has-text-white">Login</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="e.g Carolle">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label has-text-white">Mot de passe</label>
+                        <div class="control">
+                            <input class="input" type="password">
+                        </div>
+                    </div>
+                    <div class="field pt-4">
+                        <div class="control">
+                            <button class="button is-primary is-fullwidth">Connexion</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </footer>
+    </div>
+{% endblock %}

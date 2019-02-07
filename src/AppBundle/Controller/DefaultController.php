@@ -10,6 +10,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     *
      */
     public function indexAction(Request $request)
     {
@@ -34,6 +35,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/test2", name="log2")
+     *
      */
     public function testAction(Request $request)
     {
@@ -45,6 +47,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/marche", name="marche")
+     *
      */
     public function MarcheAction()
     {
@@ -60,6 +63,7 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/offreliste", name="offreliste")
+     *
      */
     public function OffreListeAction()
     {
@@ -74,6 +78,7 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/Demandeliste", name="Demandeliste")
+     *
      */
     public function DemandeListeAction()
     {
@@ -86,6 +91,7 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/accueil2", name="acceuil2")
+     *
      */
     public function WelAction(Request $request)
     {
@@ -94,9 +100,9 @@ class DefaultController extends Controller
         );
 
     }
-<<<<<<< HEAD
     /**
      * @Route("/apropos", name="apropos")
+     *
      */
     public function AproposAction(Request $request)
     {
@@ -107,6 +113,7 @@ class DefaultController extends Controller
     }
     /**
      * @Route("/contact", name="contact")
+     *
      */
     public function ContactAction(Request $request)
     {
@@ -115,7 +122,5 @@ class DefaultController extends Controller
         );
 
     }
-    
-=======
->>>>>>> bodelaire
+
 }

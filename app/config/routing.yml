@@ -10,10 +10,6 @@ app_abonnement:
     resource: "@AppBundle/Controller/AbonnementController.php"
     type:     annotation
 
-app_abonnement:
-    resource: "@AppBundle/Controller/AbonnementController.php"
-    type:     annotation
-
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
