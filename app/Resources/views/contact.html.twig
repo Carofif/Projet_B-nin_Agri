@@ -1,0 +1,60 @@
+{% extends 'BlockAccueil/base.html.twig' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-sm-1"></div>
+            <div class="col-md-10 col-sm-10"><div class="site-contact">
+                    <h1 class="titre-vente-deco"><i class="fa fa-phone"></i> Prendre contact avec nous</h1>
+
+                    <p>
+
+                        Si vous avez des questions ou des suggestions. Merci de remplir le formulaire pour nous envoyer un message 	</p>
+
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <form id="contact-form" action="/contact" method="post" role="form">
+                                <input type="hidden" name="_csrf" value="R0RiSHlJWkUKNREDCzoFDAoiBAMtfDl0ESItDjYQETR3Dg0HKhM.Ig==">
+                                <div class="form-group field-contactform-name required">
+                                    <label class="control-label" for="contactform-name">Nom & Prenoms</label>
+                                    <input type="text" id="contactform-name" class="form-control" name="ContactForm[name]" autofocus>
+
+                                    <p class="help-block help-block-error"></p>
+                                </div>
+                                <div class="form-group field-contactform-email required">
+                                    <label class="control-label" for="contactform-email">Email</label>
+                                    <input type="text" id="contactform-email" class="form-control" name="ContactForm[email]">
+
+                                    <p class="help-block help-block-error"></p>
+                                </div>
+                                <div class="form-group field-contactform-subject required">
+                                    <label class="control-label" for="contactform-subject">Sujet</label>
+                                    <input type="text" id="contactform-subject" class="form-control" name="ContactForm[subject]">
+
+                                    <p class="help-block help-block-error"></p>
+                                </div>
+                                <div class="form-group field-contactform-body required">
+                                    <label class="control-label" for="contactform-body">Corps de votre message</label>
+                                    <textarea id="contactform-body" class="form-control" name="ContactForm[body]" rows="6"></textarea>
+
+                                    <p class="help-block help-block-error"></p>
+                                </div>
+                                <div class="form-group field-contactform-verifycode">
+                                    <label class="control-label" for="contactform-verifycode">Code de Verification</label>
+                                    <div class="row"><div class="col-lg-3"><img id="contactform-verifycode-image" src="{{ asset('front/img/captcha.png') }}" alt=""></div><div class="col-lg-6"><input type="text" id="contactform-verifycode" class="form-control" name="ContactForm[verifyCode]"></div></div>
+
+                                    <p class="help-block help-block-error"></p>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn breadcrumb" name="contact-button">Envoyez</button>                </div>
+
+                            </form>        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-1"></div>
+        </div>
+    </div>
+
+
+{% endblock %}

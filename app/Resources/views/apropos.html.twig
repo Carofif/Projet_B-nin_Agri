@@ -1,0 +1,220 @@
+{% extends 'BlockAccueil/base.html.twig' %}
+
+{% block content %}
+    <main class="page-content">
+
+        <section class="custom">
+            <!--Swiper-->
+            <div class="swiper-container">
+                <div class="text-center">
+                    <h1>
+                        <span class="text-bold dyo-blue">A propos de E-FARMERS</span>
+                    </h1>
+                    <p class="big"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apropos" class="section-border text-center text-md-left">
+            <div class="col-sm-6  col-md-8" style="float: none; margin: 0 auto">
+                <p style="text-align: justify; font-size: 17px">
+                    E-FARMERSest une plateforme de mise en relation des acteurs du secteur agricole.
+                    Elle permet d'une part aux Agriculteurs (y compris les plus vulnerables) vivant dans les zones les
+                    rurales de trouver de nouveaux debouches pour leurs productions sur les marches locaux,
+                    regionaux et internationaux, et d'autre part met a la disposition des acheteurs
+                    des informations pertinentes pour faciliter leurs achats. Le meme systeme permet de recevoir des
+                    conseils avec des experts sur les nouvelles methodes agroecologiques et les donnees
+                    agrometeorologiques
+                    par mail pour eviter les risques lies aux aleas climatiques lors de l'etape de production.
+                </p>
+
+                <h2 style="padding: 10px;">Comment devenir utilisateur de E-FARMERS?</h2>
+
+                <p style="text-align: justify; font-size: 17px; line-height: normal;">
+                    Pour devenir utilisateur de E-FARMERS, il suffit de remplir le formulaire d&#039;inscription
+                    disponible <a href="/UserBundle/{{ path('fos_user_registration_register') }}/">ici</a> en precisant
+                    votre profil (agriculteur ou client).
+                </p>
+
+                <p style="text-align: justify; font-size: 17px; line-height: normal;">
+                    Apres validation du formulaire en cliquant sur le bouton "CREER UN COMPTE", un mail vous sera envoye
+                    a l&#039;adresse fournie lors de l&#039;inscription.
+                </p>
+
+                <p style="font-size: 17px; line-height: normal;">
+                    Il vous faudra enfin valider votre inscription en cliquant sur le lien contenu dans le mail de
+                    confirmation. Pensez a verifier vos spams ou courriers indesirables si le mail n&#039;apparait pas
+                    dans votre boite de reception.
+                </p>
+
+                <h2 style="padding: 10px;">Comment publier une offre ?</h2>
+
+                <div class="std std-list-block">
+
+                    <p style="font-size: 17px; line-height: normal;">
+                        Vous etes agriculteur ? Ouvrez votre exploitation et vos activites vers de
+                        nouveaux debouches en deposant une annonce de vente ou en repondant aux demandes d&#039;achat. C&#039;est
+                        simple et rapide.&nbsp;
+                    </p>
+
+                    <p style="font-size: 17px; line-height: normal;">
+                        E-FARMERSrassemble un reseau d&#039;acheteurs cherchant a s&#039;informer sur de nombreux
+                        produits.
+                    </p>
+
+                    <p style="font-size: 17px; line-height: normal;"> Pour publier une offre, Il faut cliquer sur le
+                        sous-menu "Offre" du menu "MARCHE" ou via ce <a href="/offre/{{ path('offre_new') }}" target="_blank">lien</a>.
+                    </p>
+                </div>
+                <h2 style="padding: 10px;">Comment publier une demande ?</h2>
+
+                <div class="std std-list-block" style="text-align: justify">
+
+                    <p style="font-size: 17px; line-height: normal;">
+                        Vous etes agriculteur ou commercant ? Ouvrez votre exploitation et vos activites vers de
+                        nouveaux debouches en deposant une annonce de  demande d&#039;achat. C&#039;est
+                        simple et rapide.&nbsp;
+                    </p>
+
+                    <p style="font-size: 17px; line-height: normal;">
+                        E-FARMERSrassemble un reseau d&#039;acheteurs cherchant a s&#039;informer sur de nombreux
+                        produits.
+                    </p>
+
+                    <p style="font-size: 17px; line-height: normal;"> Pour publier une demande, Il faut cliquer sur le
+                        sous-menu "Demande" du menu "MARCHE" ou via ce <a href="/offre/{{ path('demande_new') }}" target="_blank">lien</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrapper row3">
+            <section class="hoc container clear">
+                <!-- ################################################################################################ -->
+                <div class="center btmspace-50">
+                    <h2 class="heading">Toutes les fonctionnalites</h2>
+                </div>
+                <ul class="nospace elements">
+                    <li class="one_third first">
+                        <article>
+                            <div class="txtwrap">
+                                <h6 class="heading">Comment ca marche?</h6>
+
+                                <p>
+                                <ul style="text-align: justify">
+                                    <li>Tout agriculteur peut souscrire au service et payer ses abonnements via mobile
+                                        money
+                                    </li>
+                                    <li>Tout acheteur peut s&#039;abonner au service pour recevoir de notification</li>
+                                    <li>L&#039;agriculteur publie sa recolte (tonnage, prix) en utilisant l&#039;un des canaux
+                                        disponibles
+                                    </li>
+
+                                    <a style="display:none;float:right;color:#599D33;" id="comment_plus"
+                                       onclick="show_plus('comment_plus','0','4');return false" href="#"> Lire plus</a>
+                                    <li id="comment_plus1">Les publications sont moderees, puis acceptees ou pas</li>
+                                    <li id="comment_plus2">Les publications acceptees sont notifie aux abonnes (email)
+                                    </li>
+                                    <li id="comment_plus3">Les publications sont diffusees (site web, DJINOUKOUN BENIN,
+                                        réseaux sociaux)
+                                    </li>
+                                    <a style="display:none;float:right;color:#599D33;" id="comment_plus4"
+                                       onclick="show_plus('comment_plus','1','4');return false" href="#"> Fermer</a>
+                                </ul>&hellip;
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="one_third">
+                        <article>
+                            <div class="txtwrap">
+                                <h6 class="heading">Fonctionnalites</h6>
+                                <p>
+                                 <ul style="text-align: justify">
+                                    <li>Enregistrement des enregistreurs</li>
+                                    <li>Publication des offres par web et email</li>
+                                    <li>
+                                        Moderation avec acceptation ou refus des offres : site web DJINOUKOUN BENIN
+                                    </li>
+                                    <a style="display:none;float:right;color:#599D33;" id="comment2_plus"
+                                       onclick="show_plus('comment2_plus','0','7');return false" href="#"> Lire plus</a>
+                                    <li id="comment2_plus1">Diffusion des offres : site web DJINOUKOUN BENIN, reseaux
+                                        sociaux
+                                    </li>
+                                    <li id="comment2_plus2" style="display:none">Service agrometeorologie par mail</li>
+                                    <li id="comment2_plus3" style="display:none">Service cartographique des champs</li>
+                                    <li id="comment2_plus4" style="display:none">Conseils aux agriculteurs par email
+                                    </li>
+                                    <li id="comment2_plus5" style="display:none">Notification aux abonnes (email)
+                                    </li>
+                                    <li id="comment2_plus6" style="display:none">Moteur de recherche sur le site web
+                                        E-FARMERS(disponibilites des offres et demandes)
+                                    </li>
+                                    <a style="display:none;float:right;color:#599D33;" id="comment2_plus7"
+                                       onclick="show_plus('comment2_plus','1','7');return false" href="#"> Fermer</a>
+                                 </ul>&hellip;
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="one_third">
+                        <article>
+                            <div class="txtwrap">
+                                <h6 class="heading">Avantages</h6>
+
+                                <p>
+                                <ul style="text-align: justify">
+                                    <li>
+                                        Pour le secteur : promotion des acteurs et des produits
+                                    </li>
+                                    <li>
+                                        Pour les agriculteurs
+                                        <ul>
+                                            <li>Pour les agriculteurs</li>
+                                            <li>Reduction des pertes de recoltes</li>
+                                            <li>Meilleures exploiitations des terres</li>
+                                            <a style="display:none;float:right;color:#599D33;" id="comment3_plus"
+                                               onclick="show_plus('comment3_plus','0','13');return false" href="#"> Lire
+                                                plus</a>
+                                            <li id="comment3_plus1">Vente au juste prix</li>
+                                            <li id="comment3_plus2">Inclusion technologique</li>
+                                            <li id="comment3_plus3">Augmentation des revenus et amelioration des
+                                                conditions de vie
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="comment3_plus4">
+                                        Pour les acheteurs
+                                        <ul id="comment3_plus5">
+                                            <li id="comment3_plus6">Meilleurs ciblages (zones geographiques, stocks
+                                                disponibles, prix,
+                                                interlocuteurs fiables)
+                                            </li>
+                                            <li id="comment3_plus7">Facilitation des achats</li>
+                                        </ul>
+                                    </li>
+                                    <li id="comment3_plus8">
+                                        Pour les Etats & partenaires au developpement
+                                        <ul id="comment3_plus8">
+                                            <li id="comment3_plus10">Aide a la mise en oeuvre des politiques agricoles
+                                            </li>
+                                            <li id="comment3_plus11">Mise a disposition d&#039;indicateurs pertinents</li>
+                                            <li id="comment3_plus12">Aide a la reduction de la pauvrete</li>
+                                        </ul>
+                                    </li>
+                                    <a style="display:none;float:right;color:#599D33;" id="comment3_plus13"
+                                       onclick="show_plus('comment3_plus','1','13');return false" href="#"> Fermer</a>
+                                </ul>&hellip;
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+                <!-- ################################################################################################ -->
+            </section>
+        </div>
+
+
+    </main>
+    <div class="clearfix visible-sm"></div>
+{% endblock %}
