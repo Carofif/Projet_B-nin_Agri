@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2228dc05-8200-440f-9937-b96107fb2816" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ContactController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/apropos.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/contact.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/test.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/Content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/Content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/footer.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/footer.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/header.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/BlockAccueil/header.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/frontaccueil/TemplateArialogic/layout/styles/layout.css" afterPath="$PROJECT_DIR$/web/frontaccueil/TemplateArialogic/layout/styles/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/front/css/main.css" afterPath="$PROJECT_DIR$/web/front/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/block/nav.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/block/nav.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Registration/register.html.twig" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Registration/register.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/block/titrePage.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/block/titrePage.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2228dc05-8200-440f-9937-b96107fb2816" name="Default" comment="" />
     <ignored path="projet_benin_agriculture.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -428,7 +410,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1386" height="788" extended-state="0" />
+    <frame x="-9" y="-9" width="1386" height="788" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26093516" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
