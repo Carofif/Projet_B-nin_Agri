@@ -1,11 +1,13 @@
 <?php
 
 namespace AppBundle\Controller;
-
+use AppBundle\Entity\Offre;
 use AppBundle\Entity\ListeUser;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use mysqli_result;
+use AppBundle\Repository;
 
 /**
  * Listeuser controller.
@@ -24,8 +26,7 @@ class ListeUserController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $listeUsers = $em->getRepository('AppBundle:ListeUser')->findAll();
-
+        $listeUsers = $em->getRepository('AppBundle:ListeUser')->ListeDesAgriEtChamp();
         return $this->render('listeuser/index.html.twig', array(
             'listeUsers' => $listeUsers,
         ));
@@ -63,9 +64,15 @@ class ListeUserController extends Controller
      * @Route("/{id}", name="listeuser_show")
      * @Method("GET")
      */
-    public function showAction(ListeUser $listeUser)
+    public function showAction(ListeUser $listeUser, Offre $offre=null)
     {
+        $user = $this->getUser();
+        if($user == null){
+            return $this->redirectToRoute('login');
+        }
+
         $deleteForm = $this->createDeleteForm($listeUser);
+
 
         return $this->render('listeuser/show.html.twig', array(
             'listeUser' => $listeUser,

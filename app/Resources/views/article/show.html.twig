@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block content %}
+{% block body %}
     <h1>Article</h1>
 
     <table>
@@ -10,16 +10,24 @@
                 <td>{{ article.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
-                <td>{{ article.titre }}</td>
+                <th>Title</th>
+                <td>{{ article.title }}</td>
+            </tr>
+            <tr>
+                <th>Resume</th>
+                <td>{{ article.resume }}</td>
             </tr>
             <tr>
                 <th>Contenu</th>
                 <td>{{ article.contenu }}</td>
             </tr>
             <tr>
-                <th>Dateenvoie</th>
-                <td>{% if article.dateEnvoie %}{{ article.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <th>Typearticle</th>
+                <td>{{ article.typearticle }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ article.user }}</td>
             </tr>
         </tbody>
     </table>

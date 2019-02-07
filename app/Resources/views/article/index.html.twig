@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block content %}
+{% block body %}
     <h1>Articles list</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Titre</th>
+                <th>Title</th>
+                <th>Resume</th>
                 <th>Contenu</th>
-                <th>Dateenvoie</th>
+                <th>Typearticle</th>
+                <th>User</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -17,9 +19,11 @@
         {% for article in articles %}
             <tr>
                 <td><a href="{{ path('article_show', { 'id': article.id }) }}">{{ article.id }}</a></td>
-                <td>{{ article.titre }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.resume }}</td>
                 <td>{{ article.contenu }}</td>
-                <td>{% if article.dateEnvoie %}{{ article.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ article.typearticle }}</td>
+                <td>{{ article.user }}</td>
                 <td>
                     <ul>
                         <li>

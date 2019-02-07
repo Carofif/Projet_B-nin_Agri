@@ -9,10 +9,7 @@
                 </ul>
             </li>
         {% endif %}
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Repertoire des Agriculteurs</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-            <ul class="treeview-menu">
-                <li><a class="treeview-item" href="{{ path('demande_index') }}"><i class="icon fa fa-circle-o"></i> Liste</a></li>
-            </ul>
+        <li class="treeview"><a class="app-menu__item" href="{{ path('listeuser_index') }}" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Repertoire des Agriculteurs</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         </li>
         {% if is_granted('ROLE_SUPER_ADMIN')or  is_granted('ROLE_AGRICULTEUR') %}
             <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Champs</span><i class="treeview-indicator fa fa-angle-right"></i></a>
@@ -30,10 +27,17 @@
                 </ul>
             </li>
         {% endif %}
-        {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_AGRICULTEUR')%}
+       {% if is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_AGRICULTEUR')%}
             <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Article</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="{{ path('article_index') }}"><i class="icon fa fa-circle-o"></i>Liste</a></li>
+                    <li>
+                        <ul class="treeview-menu">
+                            <li><a class="treeview-item" href="{{ path('article_index_techpro') }}"><i class="icon fa fa-circle-o"></i>Technique de production</a></li>
+                            <li><a class="treeview-item" href="{{ path('abonnement_new') }}"><i class="icon fa fa-circle-o"></i> Technique de conservation </a></li>
+                            <li><a class="treeview-item" href="{{ path('abonnement_new') }}"><i class="icon fa fa-circle-o"></i> Technique agroecologique</a></li>
+                        </ul>
+
+                    </li>
                     <li><a class="treeview-item" href="{{ path('article_new') }}"><i class="icon fa fa-circle-o"></i> Ajouter</a></li>
                 </ul>
             </li>

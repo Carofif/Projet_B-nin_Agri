@@ -94,44 +94,4 @@ class DefaultController extends Controller
         );
 
     }
-    /**
-     * @Route("/apropos", name="apropos")
-     */
-    public function AproposAction(Request $request)
-    {
-
-        return $this->render('apropos.html.twig'
-        );
-
-    }
-    /**
-     * @Route("/contact", name="contact")
-     */
-    public function ContactAction(Request $request)
-    {
-
-        return $this->render('contact.html.twig'
-        );
-
-    }
-    /**
-     * @Route("/caro", name="caro")
-     */
-    public function CaroAction(Request $request)
-    {
-
-        return $this->render('caro.html.twig'
-        );
-
-    }
-    /**
-     * @Route("/test", name="test3")
-     */
-    public function Test3Action(Request $request)
-    {
-
-        return $this->render('test.html.twig'
-        );
-
-    }
 }

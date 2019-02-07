@@ -10,7 +10,7 @@
     <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
         <li class="breadcrumb-item">Champ</li>
-        <li class="breadcrumb-item"><a href="{{path('champ_new')}}">Creer une nouvelle cham</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('champ_new') }}">Creer une nouvelle cham</a></li>
     </ul>
 {% endblock %}
 
@@ -58,9 +58,21 @@
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
+                            <label for=""><b>Culture</b></label>
+                            {{ form_widget(form.culture , {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="text-danger">{{ form_errors(form.culture) }}</span>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
                             <label for=""><b>Addresse</b></label>
                             {{ form_widget(form.addresse , {'attr' : {'class' : 'form-control'}}) }}
                             <span class="text-danger">{{ form_errors(form.addresse) }}</span>
+
                         </div>
                         <div class="col-md-2"></div>
                     </div>
@@ -76,12 +88,13 @@
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-<BR>
+                    <BR>
 
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8" align="right">
-                            <input style="padding: 15px 40px 15px 40px;" class="btn btn-success" type="submit" value="Ajouter"/>
+                            <input style="padding: 15px 40px 15px 40px;" class="btn btn-success" type="submit"
+                                   value="Ajouter"/>
                         </div>
 
                         <div class="col-md-2"></div>
@@ -89,9 +102,9 @@
 
                         {#<div class="col-lg-9"></div>#}
                         {#<div class="col-lg-1">#}
-                            {#<div>#}
-                                {#<input style="padding: 15% 40% 15% 40%;" class="btn btn-success" type="submit" value="Create"/>#}
-                            {#</div>#}
+                        {#<div>#}
+                        {#<input style="padding: 15% 40% 15% 40%;" class="btn btn-success" type="submit" value="Create"/>#}
+                        {#</div>#}
                         {#</div>#}
                         {#<div class="col-lg-3">#}
                         {#</div>#}

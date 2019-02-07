@@ -134,10 +134,15 @@ class OffreController extends Controller
             return $this->redirectToRoute('login');
         }
         $deleteForm = $this->createDeleteForm($offre);
+        $em = $this->getDoctrine()->getManager();
+
+        $abon = $em->getRepository('AppBundle:ListeUser')->findOneBy(['iduser'=>$offre->getUserId()]);
+
 
         return $this->render('offre/show.html.twig', array(
             'offre' => $offre,
             'delete_form' => $deleteForm->createView(),
+            'listeuser'=>$abon,
         ));
     }
 
@@ -153,7 +158,7 @@ class OffreController extends Controller
         if($user == null){
             return $this->redirectToRoute('login');
         }
-        $deleteForm = $this->createDeleteForm($offre);
+      /*  $deleteForm = $this->createDeleteForm($offre);
         $editForm = $this->createForm('AppBundle\Form\OffreType', $offre);
         $editForm->handleRequest($request);
 
@@ -167,7 +172,13 @@ class OffreController extends Controller
             'offre' => $offre,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+        ))*/
+        $offre->setValide(true);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($offre);
+        $em->flush();
+        return $this->redirectToRoute('offre_index');
+
     }
 
     /**

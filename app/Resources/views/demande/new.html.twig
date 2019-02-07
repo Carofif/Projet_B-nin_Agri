@@ -32,15 +32,20 @@
                     <br>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="">Quantité</label>
                             {{ form_widget(form.quantiteCmd , {'attr' : {'class' : 'form-control'}}) }}
                             <span class="text-danger">{{ form_widget(form.quantiteCmd) }}</span>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="">Prix voulu</label>
                             {{ form_widget(form.prixUTvoulue , {'attr' : {'class' : 'form-control'}}) }}
                             <span class="text-danger">{{ form_errors(form.prixUTvoulue) }}</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Nom du produit</label>
+                            {{ form_widget(form.produitId , {'attr' : {'class' : 'form-control'}}) }}
+                            <span class="text-danger">{{ form_errors(form.produitId) }}</span>
                         </div>
                     </div>
                     <br>

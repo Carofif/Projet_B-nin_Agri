@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class ListeUserRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function ListeDesAgriEtChamp()
+    {
+        $con= $this->getEntityManager()->getConnection();
+        $sql1 ='SELECT liste_user.id as Id , CONCAT(liste_user.prenom," ",liste_user.nom) as Nom_et_Prenom ,liste_user.telephone, GROUP_CONCAT(champ.culture) as culture FROM liste_user , champ WHERE liste_user.iduser=champ.user_id_id GROUP BY liste_user.id;';
+
+        $statement= $con->prepare($sql1);
+        $statement->execute();
+        $result =  $statement->fetchAll();
+        return $result;
+    }
 }
