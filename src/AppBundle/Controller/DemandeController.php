@@ -71,7 +71,7 @@ class DemandeController extends Controller
         $this->denyAccessUnlessGranted(['ROLE_CLIENT'], null, "Vous n'avez pas les droit ");
         $em = $this->getDoctrine()->getManager();
 
-        $abon = $em->getRepository('AppBundle:ListeUser')->findOneBy(['username'=>$user]);
+        $abon = $em->getRepository('AppBundle:ListeUser')->findOneBy(['username'=>strval($user)]);
         $abon = $em->getRepository('UserBundle:User')->findOneBy(['id'=>$abon->getIduser()]);
         $demande = new Demande();
         $form = $this->createForm('AppBundle\Form\DemandeType', $demande);
@@ -108,11 +108,13 @@ class DemandeController extends Controller
         if($user == null){
             return $this->redirectToRoute('login');
         }
+        $em = $this->getDoctrine()->getManager();
         $deleteForm = $this->createDeleteForm($demande);
-
+        $abon = $em->getRepository('AppBundle:ListeUser')->findOneBy(['iduser'=>$demande->getUserId()]);
         return $this->render('demande/show.html.twig', array(
             'demande' => $demande,
             'delete_form' => $deleteForm->createView(),
+            'listeuser'=>$abon,
         ));
     }
 
@@ -128,7 +130,7 @@ class DemandeController extends Controller
         if($user == null){
             return $this->redirectToRoute('login');
         }
-        $deleteForm = $this->createDeleteForm($demande);
+      /*  $deleteForm = $this->createDeleteForm($demande);
         $editForm = $this->createForm('AppBundle\Form\DemandeType', $demande);
         $editForm->handleRequest($request);
 
@@ -142,7 +144,13 @@ class DemandeController extends Controller
             'demande' => $demande,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+        ));*/
+        $demande->setValide(true);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($demande);
+        $em->flush();
+        return $this->redirectToRoute('demande_index');
+
     }
 
     /**
@@ -183,6 +191,7 @@ class DemandeController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+
     }
     /**
      * Creates a new demande entity.

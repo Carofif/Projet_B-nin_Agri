@@ -14,7 +14,7 @@ class ChampType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('superficie')->add('addresse')->add('ville')->add('departement',ChoiceType::class,array(
+        $builder->add('superficie')->add('addresse')->add('culture')->add('ville')->add('departement',ChoiceType::class,array(
             'choices'=>array(
                 'Alibori'=>'Alibori',
                 'Atacora'=>'Atacora',

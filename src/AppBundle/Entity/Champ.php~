@@ -49,7 +49,7 @@ class Champ
     /**
      * @var string
      *
-     * @ORM\Column(name="culture", type="string", length=255)
+     * @ORM\Column(name="culture", type="string", length=255,nullable = true)
      */
     private $culture;
     /**

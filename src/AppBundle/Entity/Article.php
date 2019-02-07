@@ -24,23 +24,37 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=50)
+     * @ORM\Column(name="title", type="string", length=50, nullable=true)
      */
-    private $titre;
+    private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu", type="string", length=50)
+     * @ORM\Column(name="resume", type="string", length=255, nullable=true)
+     */
+    private $resume;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenu", type="text", nullable=true)
      */
     private $contenu;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="dateEnvoie", type="datetime")
+     * @ORM\Column(name="typearticle", type="string", length=40, nullable=true)
      */
-    private $dateEnvoie;
+    private $typearticle;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="userId", type="integer", nullable=true)
+     */
+    private $user;
 
 
     /**
@@ -51,6 +65,54 @@ class Article
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Article
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set resume
+     *
+     * @param string $resume
+     *
+     * @return Article
+     */
+    public function setResume($resume)
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    /**
+     * Get resume
+     *
+     * @return string
+     */
+    public function getResume()
+    {
+        return $this->resume;
     }
 
     /**
@@ -78,50 +140,51 @@ class Article
     }
 
     /**
-     * Set dateEnvoie
+     * Set typearticle
      *
-     * @param \DateTime $dateEnvoie
+     * @param string $typearticle
      *
      * @return Article
      */
-    public function setDateEnvoie($dateEnvoie)
+    public function setTypearticle($typearticle)
     {
-        $this->dateEnvoie = $dateEnvoie;
+        $this->typearticle = $typearticle;
 
         return $this;
     }
 
     /**
-     * Get dateEnvoie
-     *
-     * @return \DateTime
-     */
-    public function getDateEnvoie()
-    {
-        return $this->dateEnvoie;
-    }
-
-    /**
-     * Set titre
-     *
-     * @param string $titre
-     *
-     * @return Article
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    /**
-     * Get titre
+     * Get typearticle
      *
      * @return string
      */
-    public function getTitre()
+    public function getTypearticle()
     {
-        return $this->titre;
+        return $this->typearticle;
+    }
+
+    /**
+     * Set user
+     *
+     * @param integer $user
+     *
+     * @return Article
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return int
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
+

@@ -28,7 +28,7 @@ class ChampController extends Controller
         }
         $em = $this->getDoctrine()->getManager();
 
-        $champs = $em->getRepository('AppBundle:Champ')->findAll();
+        $champs = $em->getRepository('AppBundle:Champ')->findBy(['UserId'=>$user]);
 
         return $this->render('champ/index.html.twig', array(
             'champs' => $champs,
@@ -58,18 +58,11 @@ class ChampController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($champ);
 
-            try{
 
                 $em->flush();
                 return $this->redirectToRoute('champ_show', array('id' => $champ->getId()));
 
-            }catch (\Exception $ex){
 
-                $this->get('logger')->addAlert("ERRRRRR".$ex->getMessage());
-
-            dump($ex->getMessage());
-            die();
-            }
 
         }
 

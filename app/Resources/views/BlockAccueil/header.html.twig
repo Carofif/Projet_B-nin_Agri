@@ -1,54 +1,34 @@
 <!-- Header -->
-<header class="hoc clear" style="">
-    <nav class="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <h2>E-FARMERS</h2>
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+<header id="header" class="hoc clear" style="">
+
+        <h1 class="logo" ><a href="default/index.html.twig" style="color:#82A800;">BenAgriculture</a></h1>
+        <nav id="mainav" class="clear ">
+            <ul class="clear">
+                <li class="active"> <a style="font-size: 1em" href="index.html.twig">Accueil</a></li>
+                <li class="drop"> <a style="font-size: 1em" href="marche.html">Marche</a>
+                    <ul>
+                        <li><a href="{{ path('fos_user_security_login') }}">Offre</a></li>
+                        <li><a href="{#{{ path('fos_user_security_login') }}#}">Demande</a></li>
+                        <li><a href="{#{{ path('fos_user_security_login') }}#}">Prix sur le marche</a></li>
+                    </ul>
+                </li>
+                <li class="drop"><a style="font-size: 1em" href="connaissancesagricoles.html">Connaissances agricoles</a>
+                    <ul>
+                        <li><a href="#">Technique de production</a></li>
+                        <li><a href="#">Technique agroecologique</a></li>
+                        <li><a href="#">Technique de conservation</a></li>
+                    </ul>
+                </li>
+                <li><a style="font-size: 1em" href="sabonner.html">S'abonner</a></li>
+                <li><a style="font-size: 1em" href="sabonner.html">A propos</a></li>
+                <li><a style="font-size: 1em" href="contacts.html">contact</a></li>
+            </ul>
+        </nav>
+        <div class="clear">
+
+            <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}" style="margin-left: 70%;"> <i class="fa fa-inbox"></i> Inscription </a>
+            <a class="btn btn-success" href="{{ path('fos_user_security_login') }}"> <i class="fa fa-inbox"></i> Connexion...!</a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item has-text-success">Acceuil</a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link has-text-success">Marche</a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item has-text-black">Offre</a>
-                        <a class="navbar-item has-text-black">Demande</a>
-                        <a class="navbar-item has-text-black">Prix sur le marche</a>
-                    </div>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link has-text-success">Connaissances Agricoles</a>
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item has-text-black">Technique de production</a>
-                        <a class="navbar-item has-text-black">Technique de agroecologique</a>
-                        <a class="navbar-item has-text-black">Technique de conservation</a>
-                    </div>
-                </div>
-                <a class="navbar-item has-text-success">S'abonner</a>
-                <a class="navbar-item has-text-success">A propos</a>
-                <a class="navbar-item has-text-success">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <script>
-        $(document).ready(function() {
-
-            // Check for click events on the navbar burger icon
-            $(".navbar-burger").click(function() {
-
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                $(".navbar-burger").toggleClass("is-active");
-                $(".navbar-menu").toggleClass("is-active");
-
-            });
-        });
-    </script>
 </header>
 

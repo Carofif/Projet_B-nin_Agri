@@ -26,6 +26,70 @@ class ArticleController extends Controller
 
         $articles = $em->getRepository('AppBundle:Article')->findAll();
 
+        return $this->render('autre/affichageArticle.html.twig', array(
+            'articles' => $articles,
+        ));
+    }
+    /**
+     * Lists all article entities.
+     *
+     * @Route("/techpro", name="article_index_techpro")
+     * @Method("GET")
+     */
+    public function indexTechProAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('AppBundle:Article')->findBy(['typearticle'=>'Techniques de production']);
+
+        return $this->render('autre/affichageArticle.html.twig', array(
+            'articles' => $articles,
+        ));
+    }
+    /**
+     * Lists all article entities.
+     *
+     * @Route("/techconver", name="article_index_techconver")
+     * @Method("GET")
+     */
+    public function indexTechConverAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('AppBundle:Article')->findBy(['typearticle'=>'Technique de conservation']);
+
+        return $this->render('autre/affichageArticle.html.twig', array(
+            'articles' => $articles,
+        ));
+    }
+    /**
+     * Lists all article entities.
+     *
+     * @Route("/techagroeco", name="article_index_techagroeco")
+     * @Method("GET")
+     */
+    public function indexTechAgroeco()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('AppBundle:Article')->findBy(['typearticle'=>'Techniques agroecologiques']);
+
+        return $this->render('article/index.html.twig', array(
+            'articles' => $articles,
+        ));
+    }
+    /**
+     * Lists all article entities.
+     *
+     * @Route("/techagrometeo", name="article_index_techagrometeo")
+     * @Method("GET")
+     */
+    public function indexTechAgrometeo()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('AppBundle:Article')->findBy(['typearticle'=>'Donnees Agrometeorologiques']);
+
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
         ));

@@ -1,53 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Listeusers list</h1>
+{% block content %}
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h1>Liste des Agriculteurs</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Iduser</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Telephone</th>
-                <th>Type</th>
-                <th>Datenaissance</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for listeUser in listeUsers %}
-            <tr>
-                <td><a href="{{ path('listeuser_show', { 'id': listeUser.id }) }}">{{ listeUser.id }}</a></td>
-                <td>{{ listeUser.iduser }}</td>
-                <td>{{ listeUser.username }}</td>
-                <td>{{ listeUser.email }}</td>
-                <td>{{ listeUser.nom }}</td>
-                <td>{{ listeUser.prenom }}</td>
-                <td>{{ listeUser.telephone }}</td>
-                <td>{{ listeUser.type }}</td>
-                <td>{% if listeUser.dateNaissance %}{{ listeUser.dateNaissance|date('Y-m-d') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('listeuser_show', { 'id': listeUser.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('listeuser_edit', { 'id': listeUser.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                <table class='table'>
+                    <thead>
+                    <tr>
+                        <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom et Prenoms</th>
+                        <th>Telephone</th>
+                        <th>Culture</th>
+                    </tr>
+                    </thead>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for listeUser in listeUsers %}
+                        <tr>
+                            <td><a href="{{ path('listeuser_show', { 'id': listeUser.Id }) }}">{{ listeUser.Id }}</a></td>
+                            <td>{{ listeUser.Nom_et_Prenom }}</td>
+                            <td>{{ listeUser.telephone }}</td>
+                            <td>{{ listeUser.culture }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('listeuser_new') }}">Create a new listeUser</a>
-        </li>
-    </ul>
+                {# <ul>
+                     <li>
+                         <a href="{{ path('demande_new') }}">Create a new demande</a>
+                     </li>
+                 </ul>#}
+
+
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

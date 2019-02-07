@@ -94,6 +94,7 @@ class DefaultController extends Controller
         );
 
     }
+<<<<<<< HEAD
     /**
      * @Route("/apropos", name="apropos")
      */
@@ -115,4 +116,6 @@ class DefaultController extends Controller
 
     }
     
+=======
+>>>>>>> bodelaire
 }
