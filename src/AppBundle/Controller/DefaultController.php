@@ -114,24 +114,5 @@ class DefaultController extends Controller
         );
 
     }
-    /**
-     * @Route("/caro", name="caro")
-     */
-    public function CaroAction(Request $request)
-    {
-
-        return $this->render('caro.html.twig'
-        );
-
-    }
-    /**
-     * @Route("/test", name="test3")
-     */
-    public function Test3Action(Request $request)
-    {
-
-        return $this->render('test.html.twig'
-        );
-
-    }
+    
 }
